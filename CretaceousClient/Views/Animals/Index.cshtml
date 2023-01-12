@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Animals";
+}
+
+<h1>All Cretaceous Animals</h1>
+
+<h3>Actions:</h3>
+
+<p>@Html.ActionLink("Add a new animal to the park", "Create")</p>
+
+<h3>Animals:</h3>
+<ol>
+@foreach (Animal animal in Model)
+{
+  <li><strong>@animal.Name</strong> the @animal.Species | <a href="/Animals/Details/@(animal.AnimalId)">View Details</a></li>
+}
+</ol>
+
